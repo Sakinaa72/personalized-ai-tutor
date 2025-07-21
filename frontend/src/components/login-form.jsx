@@ -1,5 +1,4 @@
 "use client";
-import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -8,12 +7,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 
-export function LoginForm({ login}) {
+export function LoginForm({ login }) {
   return (
-    <div className="flex flex-col gap-6" >
+    <div className="flex flex-col gap-6">
       <Card>
         <CardHeader className="text-center">
           <CardTitle className="text-xl">Welcome back</CardTitle>
@@ -25,7 +22,11 @@ export function LoginForm({ login}) {
           <form>
             <div className="grid gap-6">
               <div className="flex flex-col gap-4">
-                <Button variant="outline" className="w-full" onClick={() => login()}>
+                <Button
+                  variant="outline"
+                  className="w-full"
+                  onClick={() => login("github")}
+                >
                   <svg
                     className="w-6 h-7 text-gray-800 dark:text-white"
                     aria-hidden="true"
@@ -43,7 +44,11 @@ export function LoginForm({ login}) {
                   </svg>
                   Login with Github
                 </Button>
-                <Button variant="outline" className="w-full">
+                <Button
+                  variant="outline"
+                  className="w-full"
+                  onClick={() => login("google")}
+                >
                   <svg
                     className="w-6 h-6 text-gray-800 dark:text-white"
                     aria-hidden="true"
